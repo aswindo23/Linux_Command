@@ -1,0 +1,33 @@
+# Perintah untuk Setting Proxy di Linux
+
+# Config di profile
+
+nano /etc/profile
+
+# tambahkan baris dibawah ini 
+
+MY_PROXY=alamat.proxy:port/
+
+HTTP_PROXY = $MY_PROXY
+HTTPS_PROXY = $MY_PROXY
+FTP_PROXY = $MY_PROXY
+http_proxy = $MY_PROXY
+https_proxy = $MY_PROXY
+ftp_proxy = $MY_PROXY
+
+export HTTP_PROXY HTTPS_PROXY FTP_PROXY http_proxy https_proxy ftp_proxy
+
+# simpan file
+
+### menambahkan proxy di yum 
+
+nano /etc/yum.conf
+
+proxy=alamat.proxy:port/
+
+### menambahkan proxy untuk wgetrc
+MY_PROXY=alamat.proxy:port/
+http_proxy = $MY_PROXY
+https_proxy = $MY_PROXY
+ftp_proxy = $MY_PROXY
+
